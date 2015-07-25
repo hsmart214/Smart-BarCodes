@@ -1,25 +1,158 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0rt-2m-oOI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--BarCodes-->
+        <scene sceneID="3UV-E7-jmG">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <tableViewController storyboardIdentifier="TableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="724-bj-MTP" customClass="TableViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="h7w-LU-nr5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="cH2-mZ-DLk" detailTextLabel="1r7-Fe-Xhj" style="IBUITableViewCellStyleValue1" id="RqQ-h5-33C">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RqQ-h5-33C" id="Ogk-Xb-lB4">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cH2-mZ-DLk">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1r7-Fe-Xhj">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Fuo-rw-HTU" kind="show" identifier="showBarCodeDetails" id="eZA-S9-Q9D"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="724-bj-MTP" id="2Am-zI-qT1"/>
+                            <outlet property="delegate" destination="724-bj-MTP" id="4ON-y3-ORE"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="BarCodes" id="uux-cK-mgD">
+                        <barButtonItem key="leftBarButtonItem" title="Scan" id="SjL-R8-DM8">
+                            <connections>
+                                <segue destination="NRC-g9-VdU" kind="show" identifier="scanForBarcodes" id="KnP-il-vKQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1eE-9u-daT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234" y="443"/>
+        </scene>
+        <!--Scanner View Controller-->
+        <scene sceneID="Z6x-I5-Vn0">
+            <objects>
+                <viewController storyboardIdentifier="ScannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NRC-g9-VdU" customClass="ScannerViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xmx-OZ-vDu"/>
+                        <viewControllerLayoutGuide type="bottom" id="UBk-EI-czr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6gN-YE-G55">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HQS-K3-jzt" appends="YES" id="2u5-eg-mLy"/>
+                            <outletCollection property="gestureRecognizers" destination="A3H-Pd-j2H" appends="YES" id="kR3-bg-pIw"/>
+                        </connections>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MVa-ht-QGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HQS-K3-jzt">
+                    <connections>
+                        <action selector="tap:" destination="NRC-g9-VdU" id="dAn-iH-sb7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="A3H-Pd-j2H">
+                    <connections>
+                        <action selector="pinch:" destination="NRC-g9-VdU" id="4Ei-57-i2l"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1230" y="1167"/>
+        </scene>
+        <!--Bar Code View Controller-->
+        <scene sceneID="Iak-Ex-79X">
+            <objects>
+                <viewController storyboardIdentifier="BarCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fuo-rw-HTU" customClass="BarCodeViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6W-Gm-dUu"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jvd-uu-qT7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BhT-Hv-n8W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-Bf-7dg">
+                                <rect key="frame" x="16" y="72" width="41" height="19.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9E-lW-ypi">
+                                <rect key="frame" x="16" y="99" width="36" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qNX-Bf-7dg" firstAttribute="top" secondItem="f6W-Gm-dUu" secondAttribute="bottom" constant="8" id="Fsc-Hc-nAJ"/>
+                            <constraint firstItem="m9E-lW-ypi" firstAttribute="top" secondItem="qNX-Bf-7dg" secondAttribute="bottom" constant="8" id="rVI-1i-VHz"/>
+                            <constraint firstItem="qNX-Bf-7dg" firstAttribute="leading" secondItem="m9E-lW-ypi" secondAttribute="leading" id="yV0-Bb-Yxu"/>
+                            <constraint firstItem="qNX-Bf-7dg" firstAttribute="leading" secondItem="BhT-Hv-n8W" secondAttribute="leadingMargin" id="zaj-xE-5rA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="barCodeContentsLabel" destination="m9E-lW-ypi" id="c78-KV-aEq"/>
+                        <outlet property="barCodeTypeLabel" destination="qNX-Bf-7dg" id="s3z-qG-3Oc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="muS-NA-lRz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="443"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DWK-13-5mw">
+            <objects>
+                <navigationController storyboardIdentifier="MainNav" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0rt-2m-oOI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rc5-p7-xGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rO4-Kg-mxM">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="724-bj-MTP" kind="relationship" relationship="rootViewController" id="M3b-SZ-Ef7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7H-bL-ayo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="443"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
