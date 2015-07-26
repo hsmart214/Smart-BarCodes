@@ -13,7 +13,7 @@ class BarCodeViewController: UIViewController {
     
     @IBOutlet weak var barCodeTypeLabel: UILabel!
     
-    @IBOutlet weak var barCodeContentsLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
     
     internal var barCode : AVMetadataMachineReadableCodeObject?
 
@@ -21,7 +21,7 @@ class BarCodeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         barCodeTypeLabel.text = barCode?.type
-        barCodeContentsLabel.text = barCode?.stringValue
+        textView.text = barCode?.stringValue
     }
 
 }

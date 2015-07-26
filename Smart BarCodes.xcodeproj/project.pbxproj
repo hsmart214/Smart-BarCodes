@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42385B841B647F810053F4F6 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42385B831B647F810053F4F6 /* ScannerView.swift */; };
 		42598D7A1B62F2CF00C47B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D791B62F2CF00C47B50 /* AppDelegate.swift */; };
 		42598D7F1B62F2CF00C47B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42598D7D1B62F2CF00C47B50 /* Main.storyboard */; };
 		42598D811B62F2CF00C47B50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42598D801B62F2CF00C47B50 /* Images.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42385B831B647F810053F4F6 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		42598D741B62F2CF00C47B50 /* Smart BarCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart BarCodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42598D781B62F2CF00C47B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42598D791B62F2CF00C47B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				42598D991B62F3FC00C47B50 /* TableViewController.swift */,
 				42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */,
 				42598D9D1B62F85E00C47B50 /* ScannerViewController.swift */,
+				42385B831B647F810053F4F6 /* ScannerView.swift */,
 				42598D771B62F2CF00C47B50 /* Supporting Files */,
 			);
 			path = "Smart BarCodes";
@@ -222,6 +225,7 @@
 				42598D7A1B62F2CF00C47B50 /* AppDelegate.swift in Sources */,
 				42598D9A1B62F3FC00C47B50 /* TableViewController.swift in Sources */,
 				42598D9E1B62F85E00C47B50 /* ScannerViewController.swift in Sources */,
+				42385B841B647F810053F4F6 /* ScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +421,7 @@
 				42598D951B62F2CF00C47B50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		42598D961B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "Smart BarCodesTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +430,7 @@
 				42598D981B62F2CF00C47B50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
