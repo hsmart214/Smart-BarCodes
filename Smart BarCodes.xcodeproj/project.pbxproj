@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4217CF461B65C0D500C916AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4217CF451B65C0D500C916AE /* Default-568h@2x.png */; };
 		42385B841B647F810053F4F6 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42385B831B647F810053F4F6 /* ScannerView.swift */; };
 		42598D7A1B62F2CF00C47B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D791B62F2CF00C47B50 /* AppDelegate.swift */; };
 		42598D7F1B62F2CF00C47B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42598D7D1B62F2CF00C47B50 /* Main.storyboard */; };
 		42598D811B62F2CF00C47B50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42598D801B62F2CF00C47B50 /* Images.xcassets */; };
-		42598D841B62F2CF00C47B50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42598D821B62F2CF00C47B50 /* LaunchScreen.xib */; };
 		42598D901B62F2CF00C47B50 /* Smart_BarCodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D8F1B62F2CF00C47B50 /* Smart_BarCodesTests.swift */; };
 		42598D9A1B62F3FC00C47B50 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D991B62F3FC00C47B50 /* TableViewController.swift */; };
 		42598D9C1B62F84B00C47B50 /* BarCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */; };
@@ -29,13 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4217CF451B65C0D500C916AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		42385B831B647F810053F4F6 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		42598D741B62F2CF00C47B50 /* Smart BarCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart BarCodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42598D781B62F2CF00C47B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42598D791B62F2CF00C47B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42598D7E1B62F2CF00C47B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42598D801B62F2CF00C47B50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		42598D831B62F2CF00C47B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		42598D891B62F2CF00C47B50 /* Smart BarCodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart BarCodesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42598D8E1B62F2CF00C47B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42598D8F1B62F2CF00C47B50 /* Smart_BarCodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_BarCodesTests.swift; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 		42598D6B1B62F2CF00C47B50 = {
 			isa = PBXGroup;
 			children = (
+				4217CF451B65C0D500C916AE /* Default-568h@2x.png */,
 				42598D761B62F2CF00C47B50 /* Smart BarCodes */,
 				42598D8C1B62F2CF00C47B50 /* Smart BarCodesTests */,
 				42598D751B62F2CF00C47B50 /* Products */,
@@ -97,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				42598D801B62F2CF00C47B50 /* Images.xcassets */,
-				42598D821B62F2CF00C47B50 /* LaunchScreen.xib */,
 				42598D791B62F2CF00C47B50 /* AppDelegate.swift */,
 				42598D781B62F2CF00C47B50 /* Info.plist */,
 			);
@@ -165,6 +165,8 @@
 		42598D6C1B62F2CF00C47B50 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "J. HOWARD SMART";
 				TargetAttributes = {
@@ -202,8 +204,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				42598D7F1B62F2CF00C47B50 /* Main.storyboard in Resources */,
-				42598D841B62F2CF00C47B50 /* LaunchScreen.xib in Resources */,
 				42598D811B62F2CF00C47B50 /* Images.xcassets in Resources */,
+				4217CF461B65C0D500C916AE /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +256,6 @@
 				42598D7E1B62F2CF00C47B50 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		42598D821B62F2CF00C47B50 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42598D831B62F2CF00C47B50 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -355,6 +349,7 @@
 				INFOPLIST_FILE = "Smart BarCodes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -365,6 +360,7 @@
 				INFOPLIST_FILE = "Smart BarCodes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

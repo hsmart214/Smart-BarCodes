@@ -46,14 +46,20 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         captureSession = AVCaptureSession()
         
         var error : NSError? = nil
-        var videoInput = AVCaptureDeviceInput(device: captureDevice, error: &error)
+        var videoInput: AVCaptureDeviceInput!
+        do {
+            videoInput = try AVCaptureDeviceInput(device: captureDevice)
+        } catch let error1 as NSError {
+            error = error1
+            videoInput = nil
+        }
         if videoInput != nil{
             captureSession.addInput(videoInput!)
         }else{
-            println(error?.debugDescription)
+            print(error?.debugDescription)
         }
         
-        var metaDataOutput = AVCaptureMetadataOutput()
+        let metaDataOutput = AVCaptureMetadataOutput()
         captureSession.addOutput(metaDataOutput)
         
         metaDataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
@@ -101,7 +107,7 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
                 }else{
                     
                     lastRecognizedObject = firstObject
-                    println("Identified \(x) readable object(s)")
+                    print("Identified \(x) readable object(s)")
                     if let objects = metadataObjects as? [AVMetadataMachineReadableCodeObject]{
                         delegate?.capturedBarCodes(objects)
                         var newPolys : [[CGPoint]] = []
@@ -132,7 +138,10 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     @IBAction func tap(sender: UITapGestureRecognizer) {
         let pt = sender.locationInView(self.view)
         let focalPoint = CGPoint(x: pt.y / self.view.bounds.height, y: (self.view.bounds.width - pt.x) / self.view.bounds.width)
-        captureDevice.lockForConfiguration(nil)
+        do {
+            try captureDevice.lockForConfiguration()
+        } catch _ {
+        }
         captureDevice.focusPointOfInterest = focalPoint
         captureDevice.unlockForConfiguration()
     }
@@ -146,7 +155,10 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         newZoom = min(max, newZoom)
         if newZoom < 1.0 {newZoom = 1.0}
         
-        captureDevice.lockForConfiguration(nil)
+        do {
+            try captureDevice.lockForConfiguration()
+        } catch _ {
+        }
         captureDevice.videoZoomFactor = newZoom
         captureDevice.unlockForConfiguration()
     }
