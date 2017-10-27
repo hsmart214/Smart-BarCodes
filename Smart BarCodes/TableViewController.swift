@@ -10,12 +10,12 @@ import UIKit
 import AVFoundation
 
 protocol CaptureDelegate : class {
-    func capturedBarCodes(barCodes : [AVMetadataMachineReadableCodeObject])
+    func capturedBarCodes(_ barCodes : [AVMetadataMachineReadableCodeObject])
 }
 
 final class TableViewController: UITableViewController, CaptureDelegate {
     
-    private var barCodes : [AVMetadataMachineReadableCodeObject] = []
+    fileprivate var barCodes : [AVMetadataMachineReadableCodeObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,42 +24,42 @@ final class TableViewController: UITableViewController, CaptureDelegate {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return barCodes.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
 
-        cell.textLabel?.text = barCodes[indexPath.row].type
+        cell.textLabel?.text = barCodes[(indexPath as NSIndexPath).row].type.rawValue
 
         return cell
     }
     
     
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            barCodes.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            barCodes.remove(at: (indexPath as NSIndexPath).row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     // MARK: - CaptureDelegate
     
-    func capturedBarCodes(newCodes: [AVMetadataMachineReadableCodeObject]) {
-        dispatch_async(dispatch_get_main_queue()) {
+    func capturedBarCodes(_ newCodes: [AVMetadataMachineReadableCodeObject]) {
+        DispatchQueue.main.async {
             //            self.tableView.beginUpdates()
             for code in newCodes{
                 self.barCodes.append(code)
@@ -72,17 +72,17 @@ final class TableViewController: UITableViewController, CaptureDelegate {
     
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showBarCodeDetails"{
-            let dest = segue.destinationViewController as! BarCodeViewController
+            let dest = segue.destination as! BarCodeViewController
             if let cell = sender as? UITableViewCell{
-                if let path = self.tableView.indexPathForCell(cell){
-                    dest.barCode = barCodes[path.row]
+                if let path = self.tableView.indexPath(for: cell){
+                    dest.barCode = barCodes[(path as NSIndexPath).row]
                 }
             }
         }
         if segue.identifier == "scanForBarcodes"{
-            let dest = segue.destinationViewController as! ScannerViewController
+            let dest = segue.destination as! ScannerViewController
             dest.delegate = self
         }
     }

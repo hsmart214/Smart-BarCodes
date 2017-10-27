@@ -39,10 +39,10 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         self.overlayView.delegate = self
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
+        captureDevice = AVCaptureDevice.default(for: .video)
         captureSession = AVCaptureSession()
         
         var error : NSError? = nil
@@ -56,16 +56,17 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         if videoInput != nil{
             captureSession.addInput(videoInput!)
         }else{
-            print(error?.debugDescription)
+            print(error!.debugDescription)
         }
         
         let metaDataOutput = AVCaptureMetadataOutput()
         captureSession.addOutput(metaDataOutput)
         
-        metaDataOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0))
+        metaDataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated))
         
-        let barCodeTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeUPCECode, AVMetadataObjectTypeCode39Code, AVMetadataObjectTypeCode39Mod43Code, AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode93Code, AVMetadataObjectTypeCode128Code, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeAztecCode, AVMetadataObjectTypeDataMatrixCode]
+        //let barCodeTypes = [AVMetadataObject.ObjectType.qr, AVMetadataObject.ObjectType.ean13, AVMetadataObject.ObjectType.upce, AVMetadataObject.ObjectType.code39, AVMetadataObject.ObjectType.code39Mod43, AVMetadataObject.ObjectType.ean13, AVMetadataObject.ObjectType.ean8, AVMetadataObject.ObjectType.code93, AVMetadataObject.ObjectType.code128, AVMetadataObject.ObjectType.pdf417, AVMetadataObject.ObjectType.aztec, AVMetadataObject.ObjectType.dataMatrix]
         //let barCodeTypes = [AVMetadataObjectTypeQRCode, AVMetadataObjectTypePDF417Code, AVMetadataObjectTypeAztecCode, AVMetadataObjectTypeDataMatrixCode]
+        let barCodeTypes : [AVMetadataObject.ObjectType] = [.qr, .ean8, .ean13, .upce, .code39, .code39Mod43, .code93, .code128, .pdf417, .aztec, .dataMatrix, .itf14, .interleaved2of5]
         metaDataOutput.metadataObjectTypes = barCodeTypes
         
         
@@ -73,14 +74,14 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         pLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         pLayer?.frame = self.view.layer.bounds
         
-        self.previewView.layer.addSublayer(pLayer)
+        self.previewView.layer.addSublayer(pLayer!)
         pLayer?.zPosition = -1.0
         
         
         captureSession.startRunning()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         captureSession.stopRunning()
         pLayer?.removeFromSuperlayer()
@@ -97,31 +98,24 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         return polys
     }
     
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        if self.captureSession.running {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        if self.captureSession.isRunning {
             let x = metadataObjects.count
             if x == 0 { return }
             if let firstObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if firstObject.stringValue == lastRecognizedObject?.stringValue {
                     return
                 }else{
-                    
+
                     lastRecognizedObject = firstObject
                     print("Identified \(x) readable object(s)")
                     if let objects = metadataObjects as? [AVMetadataMachineReadableCodeObject]{
                         delegate?.capturedBarCodes(objects)
                         var newPolys : [[CGPoint]] = []
                         for object in objects{
-                            var points = [CGPoint]()
-                            for corner in object.corners{
-                                var point = CGPoint()
-                                let cRef = corner as! CFDictionaryRef
-                                CGPointMakeWithDictionaryRepresentation(cRef, &point)
-                                points.append(point)
-                            }
-                            if points.count != 0 { newPolys.append(points) }
+                            if object.corners.count != 0 { newPolys.append(object.corners) }
                         }
-                        dispatch_async(dispatch_get_main_queue()) { self.polys = newPolys }
+                        DispatchQueue.main.async { self.polys = newPolys }
                     }
 //                    dispatch_async(dispatch_get_main_queue()){
 //                        self.captureSession.stopRunning()
@@ -132,11 +126,11 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
             }
         }
     }
-    
+
     // MARK - Gesture recognizers
 
-    @IBAction func tap(sender: UITapGestureRecognizer) {
-        let pt = sender.locationInView(self.view)
+    @IBAction func tap(_ sender: UITapGestureRecognizer) {
+        let pt = sender.location(in: self.view)
         let focalPoint = CGPoint(x: pt.y / self.view.bounds.height, y: (self.view.bounds.width - pt.x) / self.view.bounds.width)
         do {
             try captureDevice.lockForConfiguration()
@@ -146,7 +140,7 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         captureDevice.unlockForConfiguration()
     }
     
-    @IBAction func pinch(sender: UIPinchGestureRecognizer) {
+    @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
         let factor = sender.scale
         sender.scale = 1.0
         let zoom = captureDevice.videoZoomFactor

@@ -17,10 +17,10 @@ class BarCodeViewController: UIViewController {
     
     internal var barCode : AVMetadataMachineReadableCodeObject?
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        barCodeTypeLabel.text = barCode?.type
+        barCodeTypeLabel.text = (barCode?.type).map { $0.rawValue }
         textView.text = barCode?.stringValue
     }
 

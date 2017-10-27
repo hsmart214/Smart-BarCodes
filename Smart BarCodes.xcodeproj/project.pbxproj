@@ -12,21 +12,10 @@
 		42598D7A1B62F2CF00C47B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D791B62F2CF00C47B50 /* AppDelegate.swift */; };
 		42598D7F1B62F2CF00C47B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42598D7D1B62F2CF00C47B50 /* Main.storyboard */; };
 		42598D811B62F2CF00C47B50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42598D801B62F2CF00C47B50 /* Images.xcassets */; };
-		42598D901B62F2CF00C47B50 /* Smart_BarCodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D8F1B62F2CF00C47B50 /* Smart_BarCodesTests.swift */; };
 		42598D9A1B62F3FC00C47B50 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D991B62F3FC00C47B50 /* TableViewController.swift */; };
 		42598D9C1B62F84B00C47B50 /* BarCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */; };
 		42598D9E1B62F85E00C47B50 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D9D1B62F85E00C47B50 /* ScannerViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		42598D8A1B62F2CF00C47B50 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42598D6C1B62F2CF00C47B50 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 42598D731B62F2CF00C47B50;
-			remoteInfo = "Smart BarCodes";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4217CF451B65C0D500C916AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -36,7 +25,6 @@
 		42598D791B62F2CF00C47B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42598D7E1B62F2CF00C47B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42598D801B62F2CF00C47B50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		42598D891B62F2CF00C47B50 /* Smart BarCodesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart BarCodesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42598D8E1B62F2CF00C47B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42598D8F1B62F2CF00C47B50 /* Smart_BarCodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_BarCodesTests.swift; sourceTree = "<group>"; };
 		42598D991B62F3FC00C47B50 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -46,13 +34,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		42598D711B62F2CF00C47B50 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42598D861B62F2CF00C47B50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				42598D741B62F2CF00C47B50 /* Smart BarCodes.app */,
-				42598D891B62F2CF00C47B50 /* Smart BarCodesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -141,24 +121,6 @@
 			productReference = 42598D741B62F2CF00C47B50 /* Smart BarCodes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		42598D881B62F2CF00C47B50 /* Smart BarCodesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 42598D961B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "Smart BarCodesTests" */;
-			buildPhases = (
-				42598D851B62F2CF00C47B50 /* Sources */,
-				42598D861B62F2CF00C47B50 /* Frameworks */,
-				42598D871B62F2CF00C47B50 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				42598D8B1B62F2CF00C47B50 /* PBXTargetDependency */,
-			);
-			name = "Smart BarCodesTests";
-			productName = "Smart BarCodesTests";
-			productReference = 42598D891B62F2CF00C47B50 /* Smart BarCodesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,15 +129,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "J. HOWARD SMART";
 				TargetAttributes = {
 					42598D731B62F2CF00C47B50 = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					42598D881B62F2CF00C47B50 = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 42598D731B62F2CF00C47B50;
+						DevelopmentTeam = TY3543425A;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -193,7 +153,6 @@
 			projectRoot = "";
 			targets = (
 				42598D731B62F2CF00C47B50 /* Smart BarCodes */,
-				42598D881B62F2CF00C47B50 /* Smart BarCodesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -206,13 +165,6 @@
 				42598D7F1B62F2CF00C47B50 /* Main.storyboard in Resources */,
 				42598D811B62F2CF00C47B50 /* Images.xcassets in Resources */,
 				4217CF461B65C0D500C916AE /* Default-568h@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42598D871B62F2CF00C47B50 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,23 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42598D851B62F2CF00C47B50 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42598D901B62F2CF00C47B50 /* Smart_BarCodesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		42598D8B1B62F2CF00C47B50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 42598D731B62F2CF00C47B50 /* Smart BarCodes */;
-			targetProxy = 42598D8A1B62F2CF00C47B50 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		42598D7D1B62F2CF00C47B50 /* Main.storyboard */ = {
@@ -269,19 +205,29 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -313,15 +259,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -338,6 +293,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -346,9 +302,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TY3543425A;
 				INFOPLIST_FILE = "Smart BarCodes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mySmartSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -357,44 +317,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TY3543425A;
 				INFOPLIST_FILE = "Smart BarCodes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mySmartSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		42598D971B62F2CF00C47B50 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Smart BarCodesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart BarCodes.app/Smart BarCodes";
-			};
-			name = Debug;
-		};
-		42598D981B62F2CF00C47B50 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Smart BarCodesTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Smart BarCodes.app/Smart BarCodes";
 			};
 			name = Release;
 		};
@@ -415,15 +345,6 @@
 			buildConfigurations = (
 				42598D941B62F2CF00C47B50 /* Debug */,
 				42598D951B62F2CF00C47B50 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		42598D961B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "Smart BarCodesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42598D971B62F2CF00C47B50 /* Debug */,
-				42598D981B62F2CF00C47B50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

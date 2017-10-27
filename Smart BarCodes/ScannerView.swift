@@ -12,8 +12,8 @@ class ScannerView: UIView {
     
     weak var delegate : CornerDelegate?
 
-    override func drawRect(rect: CGRect) {
-        if let polygons = delegate?.polygons() where polygons.count != 0 {
+    override func draw(_ rect: CGRect) {
+        if let polygons = delegate?.polygons() , polygons.count != 0 {
             // change all of the points from relative space to absolute points
             let h = self.bounds.size.height
             let w = self.bounds.size.width
@@ -27,18 +27,18 @@ class ScannerView: UIView {
                 newPolys.append(newPoly)
             }
             
-            let context = UIGraphicsGetCurrentContext()
-            UIColor.redColor().setStroke()
+            //let context = UIGraphicsGetCurrentContext()
+            UIColor.red.setStroke()
             let path = UIBezierPath()
             path.lineWidth = 4.0
             
             for poly in newPolys{
                 if poly.count == 0 {continue}
-                path.moveToPoint(poly[0])
+                path.move(to: poly[0])
                 for pt in poly{
-                    path.addLineToPoint(pt)
+                    path.addLine(to: pt)
                 }
-                path.closePath()
+                path.close()
                 path.stroke()
                 path.removeAllPoints()
             }
