@@ -15,13 +15,13 @@ class BarCodeViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     
-    internal var barCode : AVMetadataMachineReadableCodeObject?
+    internal var barCode : CapturedCode?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        barCodeTypeLabel.text = (barCode?.type).map { $0.rawValue }
-        textView.text = barCode?.stringValue
+        barCodeTypeLabel.text = barCode?.barCodeType
+        textView.text = barCode?.barCodeValue
     }
 
 }

@@ -15,15 +15,13 @@ protocol CaptureDelegate : class {
 
 final class TableViewController: UITableViewController, CaptureDelegate {
     
-    fileprivate var barCodes : [AVMetadataMachineReadableCodeObject] = []
+    var barCodes : [CapturedCode] = []
+    var df = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        df.dateStyle = .short
+        df.timeStyle = .short
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -41,7 +39,8 @@ final class TableViewController: UITableViewController, CaptureDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
 
-        cell.textLabel?.text = barCodes[(indexPath as NSIndexPath).row].type.rawValue
+        cell.textLabel?.text = barCodes[indexPath.row].barCodeType
+        cell.detailTextLabel?.text = df.string(from: barCodes[indexPath.row].captureTime)
 
         return cell
     }
@@ -62,7 +61,7 @@ final class TableViewController: UITableViewController, CaptureDelegate {
         DispatchQueue.main.async {
             //            self.tableView.beginUpdates()
             for code in newCodes{
-                self.barCodes.append(code)
+                self.barCodes.append(CapturedCode(metadateObject: code))
             }
             //            self.tableView.endUpdates()
             self.tableView.reloadData()
@@ -77,7 +76,7 @@ final class TableViewController: UITableViewController, CaptureDelegate {
             let dest = segue.destination as! BarCodeViewController
             if let cell = sender as? UITableViewCell{
                 if let path = self.tableView.indexPath(for: cell){
-                    dest.barCode = barCodes[(path as NSIndexPath).row]
+                    dest.barCode = barCodes[path.row]
                 }
             }
         }
