@@ -22,7 +22,7 @@
 		4217CF451B65C0D500C916AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		42385B831B647F810053F4F6 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		42481F191FA3F5AD0083AFF8 /* CapturedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedCode.swift; sourceTree = "<group>"; };
-		42598D741B62F2CF00C47B50 /* Smart BarCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart BarCodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42598D741B62F2CF00C47B50 /* SmartBarCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBarCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42598D781B62F2CF00C47B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42598D791B62F2CF00C47B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42598D7E1B62F2CF00C47B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		42598D751B62F2CF00C47B50 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42598D741B62F2CF00C47B50 /* Smart BarCodes.app */,
+				42598D741B62F2CF00C47B50 /* SmartBarCodes.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,9 +107,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42598D731B62F2CF00C47B50 /* Smart BarCodes */ = {
+		42598D731B62F2CF00C47B50 /* SmartBarCodes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42598D931B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "Smart BarCodes" */;
+			buildConfigurationList = 42598D931B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "SmartBarCodes" */;
 			buildPhases = (
 				42598D701B62F2CF00C47B50 /* Sources */,
 				42598D711B62F2CF00C47B50 /* Frameworks */,
@@ -119,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = "Smart BarCodes";
+			name = SmartBarCodes;
 			productName = "Smart BarCodes";
-			productReference = 42598D741B62F2CF00C47B50 /* Smart BarCodes.app */;
+			productReference = 42598D741B62F2CF00C47B50 /* SmartBarCodes.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +142,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 42598D6F1B62F2CF00C47B50 /* Build configuration list for PBXProject "Smart BarCodes" */;
+			buildConfigurationList = 42598D6F1B62F2CF00C47B50 /* Build configuration list for PBXProject "SmartBarCodes" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -155,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42598D731B62F2CF00C47B50 /* Smart BarCodes */,
+				42598D731B62F2CF00C47B50 /* SmartBarCodes */,
 			);
 		};
 /* End PBXProject section */
@@ -335,7 +335,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42598D6F1B62F2CF00C47B50 /* Build configuration list for PBXProject "Smart BarCodes" */ = {
+		42598D6F1B62F2CF00C47B50 /* Build configuration list for PBXProject "SmartBarCodes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42598D911B62F2CF00C47B50 /* Debug */,
@@ -344,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42598D931B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "Smart BarCodes" */ = {
+		42598D931B62F2CF00C47B50 /* Build configuration list for PBXNativeTarget "SmartBarCodes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42598D941B62F2CF00C47B50 /* Debug */,

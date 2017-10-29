@@ -108,20 +108,18 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
                 }else{
 
                     lastRecognizedObject = firstObject
-                    print("Identified \(x) readable object(s)")
                     if let objects = metadataObjects as? [AVMetadataMachineReadableCodeObject]{
                         delegate?.capturedBarCodes(objects)
                         var newPolys : [[CGPoint]] = []
                         for object in objects{
                             if object.corners.count != 0 { newPolys.append(object.corners) }
                         }
-                        DispatchQueue.main.async { self.polys = newPolys }
+                        DispatchQueue.main.async {
+                            [unowned self] in
+                            self.polys = newPolys
+                            self.doneButton(self)
+                        }
                     }
-//                    dispatch_async(dispatch_get_main_queue()){
-//                        self.captureSession.stopRunning()
-//                        self.pLayer?.removeFromSuperlayer()
-//                        self.navigationController?.popViewControllerAnimated(true)
-//                    }
                 }
             }
         }
@@ -155,5 +153,10 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         }
         captureDevice.videoZoomFactor = newZoom
         captureDevice.unlockForConfiguration()
+    }
+    
+    
+    @IBAction func doneButton(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
