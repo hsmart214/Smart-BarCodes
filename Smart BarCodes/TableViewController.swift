@@ -23,7 +23,7 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
     let filename = "SmartBarCodes.json"
     var barCodes = [DayOfCodes]()
     var df = DateFormatter()
-    var observerToken : Any?
+//    var observerToken : Any?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +33,11 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
         if !unarchive(){
             barCodes = []
         }
-        observerToken = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) {
-            [unowned self](notification) in
-            self.archive()
-            NotificationCenter.default.removeObserver(self.observerToken!)
-        }
+//        observerToken = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) {
+//            [unowned self](notification) in
+//            self.archive()
+//            NotificationCenter.default.removeObserver(self.observerToken!)
+//        }
     }
     
     // MARK: - UITableViewDelegate
@@ -200,5 +200,10 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
 //        tableView.reloadData()
 //    }
     
+//    deinit{
+//        if let token = observerToken{
+//            NotificationCenter.default.removeObserver(token)
+//        }
+//    }
     
 }
