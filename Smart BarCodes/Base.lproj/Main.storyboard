@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SmartBarCodes-->
+        <!--Smart Barcodes-->
         <scene sceneID="3UV-E7-jmG">
             <objects>
                 <tableViewController storyboardIdentifier="TableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="724-bj-MTP" customClass="TableViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="p7q-na-E47"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="SmartBarCodes" id="uux-cK-mgD"/>
+                    <navigationItem key="navigationItem" title="Smart Barcodes" id="uux-cK-mgD"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eE-9u-daT" userLabel="First Responder" sceneMemberID="firstResponder"/>

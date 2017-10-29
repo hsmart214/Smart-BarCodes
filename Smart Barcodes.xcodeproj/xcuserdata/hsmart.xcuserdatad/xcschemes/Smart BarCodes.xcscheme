@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42598D731B62F2CF00C47B50"
-               BuildableName = "SmartBarCodes.app"
-               BlueprintName = "SmartBarCodes"
-               ReferencedContainer = "container:SmartBarCodes.xcodeproj">
+               BuildableName = "Smart Barcodes.app"
+               BlueprintName = "Smart Barcodes"
+               ReferencedContainer = "container:Smart Barcodes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "42598D881B62F2CF00C47B50"
                BuildableName = "Smart BarCodesTests.xctest"
                BlueprintName = "Smart BarCodesTests"
-               ReferencedContainer = "container:SmartBarCodes.xcodeproj">
+               ReferencedContainer = "container:Smart Barcodes.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,7 +50,7 @@
                BlueprintIdentifier = "42598D881B62F2CF00C47B50"
                BuildableName = "Smart BarCodesTests.xctest"
                BlueprintName = "Smart BarCodesTests"
-               ReferencedContainer = "container:SmartBarCodes.xcodeproj">
+               ReferencedContainer = "container:Smart Barcodes.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42598D731B62F2CF00C47B50"
-            BuildableName = "SmartBarCodes.app"
-            BlueprintName = "SmartBarCodes"
-            ReferencedContainer = "container:SmartBarCodes.xcodeproj">
+            BuildableName = "Smart Barcodes.app"
+            BlueprintName = "Smart Barcodes"
+            ReferencedContainer = "container:Smart Barcodes.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42598D731B62F2CF00C47B50"
-            BuildableName = "SmartBarCodes.app"
-            BlueprintName = "SmartBarCodes"
-            ReferencedContainer = "container:SmartBarCodes.xcodeproj">
+            BuildableName = "Smart Barcodes.app"
+            BlueprintName = "Smart Barcodes"
+            ReferencedContainer = "container:Smart Barcodes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -101,9 +101,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42598D731B62F2CF00C47B50"
-            BuildableName = "SmartBarCodes.app"
-            BlueprintName = "SmartBarCodes"
-            ReferencedContainer = "container:SmartBarCodes.xcodeproj">
+            BuildableName = "Smart Barcodes.app"
+            BlueprintName = "Smart Barcodes"
+            ReferencedContainer = "container:Smart Barcodes.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
