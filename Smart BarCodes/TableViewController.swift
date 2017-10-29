@@ -155,6 +155,7 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
             if let cell = sender as? UITableViewCell{
                 if let path = self.tableView.indexPath(for: cell){
                     dest.barCode = barCodes[path.section].codes[path.row]
+                    dest.delegate = self
                 }
             }
         }

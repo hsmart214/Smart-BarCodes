@@ -20,6 +20,7 @@ class BarCodeViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var textView: UITextView!
     
     var barCode : CapturedCode?
+    var delegate : CodeEditDelegate?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +32,9 @@ class BarCodeViewController: UIViewController, UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         barCode?.descriptor = descriptorTextField.text
         textField.resignFirstResponder()
+        if let code = barCode{
+            delegate?.update(code: code)
+        }
         return true
     }
     
