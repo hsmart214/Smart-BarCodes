@@ -9,10 +9,11 @@
 import Foundation
 import AVFoundation
 
-struct CapturedCode: Codable{
+class CapturedCode: Codable{
     let barCodeType : String
     let barCodeValue : String?
     let captureTime : Date
+    var descriptor : String?
     
     init(type: String, stringValue : String?, andTime time : Date){
         barCodeType = type
@@ -20,7 +21,7 @@ struct CapturedCode: Codable{
         captureTime = time
     }
     
-    init(metadateObject bc : AVMetadataMachineReadableCodeObject) {
+    convenience init(metadateObject bc : AVMetadataMachineReadableCodeObject) {
         let isoCode = bc.type.rawValue
         var collector = ""
         for i in isoCode.characters{

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0rt-2m-oOI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment version="4144" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
@@ -10,36 +13,68 @@
         <!--Smart Barcodes-->
         <scene sceneID="3UV-E7-jmG">
             <objects>
-                <tableViewController storyboardIdentifier="TableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="724-bj-MTP" customClass="TableViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="h7w-LU-nr5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController storyboardIdentifier="TableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="724-bj-MTP" customClass="TableViewController" customModule="Smart_Barcodes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="28" sectionFooterHeight="28" id="h7w-LU-nr5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="cH2-mZ-DLk" detailTextLabel="1r7-Fe-Xhj" style="IBUITableViewCellStyleValue1" id="RqQ-h5-33C">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="131" id="RqQ-h5-33C" customClass="CapturedCodeTableViewCell" customModule="Smart_Barcodes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RqQ-h5-33C" id="Ogk-Xb-lB4">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="130.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cH2-mZ-DLk">
-                                            <rect key="frame" x="20" y="12" width="31.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yP-6n-zf2">
+                                            <rect key="frame" x="20" y="8" width="314" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1r7-Fe-Xhj">
-                                            <rect key="frame" x="523" y="12" width="41.5" height="19.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Example content" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ud-H8-eCO">
+                                            <rect key="frame" x="20" y="64" width="322" height="47"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" shipmentTrackingNumber="YES"/>
+                                        </textView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="t3Q-Lk-eQu">
+                                            <rect key="frame" x="20" y="36" width="302" height="19.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Encoding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvu-SQ-f3x">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="19.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2b-Lt-nHZ">
+                                                    <rect key="frame" x="267.5" y="0.0" width="34.5" height="19.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="3ud-H8-eCO" secondAttribute="bottom" constant="20" symbolic="YES" id="Isv-Cy-INS"/>
+                                        <constraint firstItem="4yP-6n-zf2" firstAttribute="leading" secondItem="Ogk-Xb-lB4" secondAttribute="leading" constant="20" id="Mz9-3L-4XL"/>
+                                        <constraint firstAttribute="trailing" secondItem="3ud-H8-eCO" secondAttribute="trailing" id="Xfc-1k-G7U"/>
+                                        <constraint firstItem="4yP-6n-zf2" firstAttribute="top" secondItem="Ogk-Xb-lB4" secondAttribute="top" constant="8" id="bMB-QV-3VC"/>
+                                        <constraint firstItem="3ud-H8-eCO" firstAttribute="top" secondItem="t3Q-Lk-eQu" secondAttribute="bottom" constant="8" symbolic="YES" id="eM1-yz-3ik"/>
+                                        <constraint firstItem="t3Q-Lk-eQu" firstAttribute="top" secondItem="4yP-6n-zf2" secondAttribute="bottom" constant="8" symbolic="YES" id="s0N-Um-TVV"/>
+                                        <constraint firstAttribute="trailing" secondItem="t3Q-Lk-eQu" secondAttribute="trailing" constant="20" symbolic="YES" id="vE4-MC-QH6"/>
+                                        <constraint firstAttribute="trailing" secondItem="4yP-6n-zf2" secondAttribute="trailing" constant="8" id="wCa-20-7MY"/>
+                                        <constraint firstItem="3ud-H8-eCO" firstAttribute="leading" secondItem="Ogk-Xb-lB4" secondAttribute="leading" constant="20" symbolic="YES" id="xxO-dm-5CK"/>
+                                        <constraint firstItem="t3Q-Lk-eQu" firstAttribute="leading" secondItem="Ogk-Xb-lB4" secondAttribute="leading" constant="20" symbolic="YES" id="y8s-OY-tee"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contentTextView" destination="3ud-H8-eCO" id="iAk-jY-POf"/>
+                                    <outlet property="dateLabel" destination="s2b-Lt-nHZ" id="l0k-P8-Omh"/>
+                                    <outlet property="descriptor" destination="4yP-6n-zf2" id="Vjn-yx-ghZ"/>
+                                    <outlet property="encodingLabel" destination="yvu-SQ-f3x" id="kr4-1Q-Zp7"/>
                                     <segue destination="Fuo-rw-HTU" kind="show" identifier="showBarCodeDetails" id="eZA-S9-Q9D"/>
                                 </connections>
                             </tableViewCell>
@@ -64,22 +99,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eE-9u-daT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="443"/>
+            <point key="canvasLocation" x="1232.8" y="442.12893553223392"/>
         </scene>
         <!--Scan a Barcode-->
         <scene sceneID="Z6x-I5-Vn0">
             <objects>
-                <viewController storyboardIdentifier="ScannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NRC-g9-VdU" customClass="ScannerViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScannerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NRC-g9-VdU" customClass="ScannerViewController" customModule="Smart_Barcodes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="redraw" id="6gN-YE-G55">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-LN-G2Z" userLabel="previewView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-kU-niB" customClass="ScannerView" customModule="Smart_BarCodes" customModuleProvider="target">
-                                <rect key="frame" x="16" y="0.0" width="600" height="600"/>
+                            <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-kU-niB" customClass="ScannerView" customModule="Smart_Barcodes" customModuleProvider="target">
+                                <rect key="frame" x="16" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
@@ -135,40 +170,40 @@
         <!--Bar Code View Controller-->
         <scene sceneID="Iak-Ex-79X">
             <objects>
-                <viewController storyboardIdentifier="BarCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fuo-rw-HTU" customClass="BarCodeViewController" customModule="Smart_BarCodes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BarCodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fuo-rw-HTU" customClass="BarCodeViewController" customModule="Smart_Barcodes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BhT-Hv-n8W">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-Bf-7dg">
-                                <rect key="frame" x="16" y="28" width="568" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-9j-9oO">
-                                <rect key="frame" x="16" y="54" width="568" height="526"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-9j-9oO">
+                                <rect key="frame" x="16" y="108" width="343" height="495"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" shipmentTrackingNumber="YES"/>
                             </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aqQ-9p-gkW">
+                                <rect key="frame" x="16" y="70" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vCF-9j-9oO" firstAttribute="top" secondItem="aqQ-9p-gkW" secondAttribute="bottom" constant="8" symbolic="YES" id="2tx-F1-XR8"/>
                             <constraint firstItem="vCF-9j-9oO" firstAttribute="leading" secondItem="vXc-xJ-bUE" secondAttribute="leading" constant="16" id="3t3-h3-Tcn"/>
                             <constraint firstItem="vXc-xJ-bUE" firstAttribute="bottom" secondItem="vCF-9j-9oO" secondAttribute="bottom" constant="20" id="4h2-B3-OLN"/>
-                            <constraint firstItem="qNX-Bf-7dg" firstAttribute="leading" secondItem="vXc-xJ-bUE" secondAttribute="leading" constant="16" id="7ru-AR-veQ"/>
+                            <constraint firstItem="aqQ-9p-gkW" firstAttribute="leading" secondItem="vXc-xJ-bUE" secondAttribute="leading" constant="16" id="DWu-7j-5XQ"/>
                             <constraint firstItem="vXc-xJ-bUE" firstAttribute="trailing" secondItem="vCF-9j-9oO" secondAttribute="trailing" constant="16" id="Fmq-Va-k6T"/>
-                            <constraint firstItem="qNX-Bf-7dg" firstAttribute="top" secondItem="vXc-xJ-bUE" secondAttribute="top" constant="8" id="Rgu-Ub-qTr"/>
-                            <constraint firstItem="vCF-9j-9oO" firstAttribute="top" secondItem="qNX-Bf-7dg" secondAttribute="bottom" constant="6" id="uQi-a3-SUz"/>
-                            <constraint firstItem="vXc-xJ-bUE" firstAttribute="trailing" secondItem="qNX-Bf-7dg" secondAttribute="trailing" constant="16" id="xpq-XK-g1U"/>
+                            <constraint firstItem="aqQ-9p-gkW" firstAttribute="top" secondItem="vXc-xJ-bUE" secondAttribute="top" constant="6" id="kLC-mR-ksa"/>
+                            <constraint firstItem="vXc-xJ-bUE" firstAttribute="trailing" secondItem="aqQ-9p-gkW" secondAttribute="trailing" constant="16" id="pbo-UG-fRB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vXc-xJ-bUE"/>
                     </view>
                     <connections>
-                        <outlet property="barCodeTypeLabel" destination="qNX-Bf-7dg" id="s3z-qG-3Oc"/>
+                        <outlet property="descriptorTextField" destination="aqQ-9p-gkW" id="nix-R0-S4t"/>
                         <outlet property="textView" destination="vCF-9j-9oO" id="3Xf-cf-ecs"/>
                     </connections>
                 </viewController>

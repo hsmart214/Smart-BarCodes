@@ -10,6 +10,7 @@
 		4217CF461B65C0D500C916AE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4217CF451B65C0D500C916AE /* Default-568h@2x.png */; };
 		42385B841B647F810053F4F6 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42385B831B647F810053F4F6 /* ScannerView.swift */; };
 		42481F1A1FA3F5AD0083AFF8 /* CapturedCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42481F191FA3F5AD0083AFF8 /* CapturedCode.swift */; };
+		42481F1C1FA572950083AFF8 /* CapturedCodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42481F1B1FA572950083AFF8 /* CapturedCodeTableViewCell.swift */; };
 		42598D7A1B62F2CF00C47B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D791B62F2CF00C47B50 /* AppDelegate.swift */; };
 		42598D7F1B62F2CF00C47B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42598D7D1B62F2CF00C47B50 /* Main.storyboard */; };
 		42598D811B62F2CF00C47B50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42598D801B62F2CF00C47B50 /* Images.xcassets */; };
@@ -22,6 +23,7 @@
 		4217CF451B65C0D500C916AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		42385B831B647F810053F4F6 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		42481F191FA3F5AD0083AFF8 /* CapturedCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedCode.swift; sourceTree = "<group>"; };
+		42481F1B1FA572950083AFF8 /* CapturedCodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedCodeTableViewCell.swift; sourceTree = "<group>"; };
 		42598D741B62F2CF00C47B50 /* Smart Barcodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Barcodes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42598D781B62F2CF00C47B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42598D791B62F2CF00C47B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				42598D7D1B62F2CF00C47B50 /* Main.storyboard */,
 				42598D991B62F3FC00C47B50 /* TableViewController.swift */,
+				42481F1B1FA572950083AFF8 /* CapturedCodeTableViewCell.swift */,
 				42481F191FA3F5AD0083AFF8 /* CapturedCode.swift */,
 				42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */,
 				42598D9D1B62F85E00C47B50 /* ScannerViewController.swift */,
@@ -182,6 +185,7 @@
 				42598D7A1B62F2CF00C47B50 /* AppDelegate.swift in Sources */,
 				42598D9A1B62F3FC00C47B50 /* TableViewController.swift in Sources */,
 				42598D9E1B62F85E00C47B50 /* ScannerViewController.swift in Sources */,
+				42481F1C1FA572950083AFF8 /* CapturedCodeTableViewCell.swift in Sources */,
 				42481F1A1FA3F5AD0083AFF8 /* CapturedCode.swift in Sources */,
 				42385B841B647F810053F4F6 /* ScannerView.swift in Sources */,
 			);

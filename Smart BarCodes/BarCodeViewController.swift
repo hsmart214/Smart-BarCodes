@@ -9,19 +9,33 @@
 import UIKit
 import AVFoundation
 
-class BarCodeViewController: UIViewController {
+protocol CodeEditDelegate {
+    func update(code: CapturedCode)
+}
+
+class BarCodeViewController: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var barCodeTypeLabel: UILabel!
+    @IBOutlet weak var descriptorTextField: UITextField!
     
     @IBOutlet weak var textView: UITextView!
     
-    internal var barCode : CapturedCode?
+    var barCode : CapturedCode?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        barCodeTypeLabel.text = barCode?.barCodeType
+        descriptorTextField.text = barCode?.descriptor
         textView.text = barCode?.barCodeValue
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        barCode?.descriptor = descriptorTextField.text
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func viewDidLoad() {
+        descriptorTextField.delegate = self
     }
 
 }

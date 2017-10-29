@@ -13,7 +13,7 @@ protocol CaptureDelegate : class {
     func capturedBarCodes(_ barCodes : [AVMetadataMachineReadableCodeObject])
 }
 
-final class TableViewController: UITableViewController, CaptureDelegate {
+final class TableViewController: UITableViewController, CaptureDelegate, CodeEditDelegate {
     
     struct DayOfCodes : Codable{
         var date : Date
@@ -88,13 +88,10 @@ final class TableViewController: UITableViewController, CaptureDelegate {
 //    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) 
-
-        cell.textLabel?.text = barCodes[indexPath.section].codes[indexPath.row].barCodeType
-        df.dateStyle = .short
-        df.timeStyle = .short
-        cell.detailTextLabel?.text = df.string(from: barCodes[indexPath.section].codes[indexPath.row].captureTime)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CapturedCodeTableViewCell
+        cell.df = df
+        cell.code = barCodes[indexPath.section].codes[indexPath.row]
+        
         return cell
     }
     
@@ -143,6 +140,12 @@ final class TableViewController: UITableViewController, CaptureDelegate {
         }
     }
 
+    // MARK: - CodeEditDelegate
+    
+    func update(code : CapturedCode){
+        archive()
+        tableView.reloadData()
+    }
     
     // MARK: - Navigation
 
@@ -190,6 +193,11 @@ final class TableViewController: UITableViewController, CaptureDelegate {
         let documentPath = searchPaths.first! as NSString
         return URL(fileURLWithPath: documentPath.appendingPathComponent(filename))
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        tableView.reloadData()
+//    }
     
     
 }
