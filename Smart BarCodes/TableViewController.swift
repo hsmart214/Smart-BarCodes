@@ -32,6 +32,17 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         if !unarchive(){
             barCodes = []
+            let yesterday = Date().addingTimeInterval(-24*60*60.0)
+            var sampleYesterday = DayOfCodes(date: yesterday, codes: [])
+            let sampleDataMatrix = CapturedCode(type: "DataMatrix", stringValue: "www.MySmartSoftware.com", andTime: yesterday)
+            sampleDataMatrix.descriptor = "My Website"
+            let sampleQRCode = CapturedCode(type: "QRCode", stringValue: "www.whitehouse.gov", andTime: yesterday)
+            sampleYesterday.codes = [sampleDataMatrix, sampleQRCode]
+            var sampleToday = DayOfCodes(date: Date(), codes: [])
+            let sampleAztec = CapturedCode(type: "Aztec", stringValue: "1Z24823766Q765", andTime: Date())
+            sampleToday.codes = [sampleAztec]
+            barCodes = [sampleYesterday, sampleToday]
+            
         }
 //        observerToken = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) {
 //            [unowned self](notification) in
@@ -65,8 +76,8 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
             view = UILabel(frame: CGRect.zero)
             view?.text = text
             view?.textColor = UIColor.white
-            view?.backgroundColor = UIColor.clear
-            view?.font = UIFont.preferredFont(forTextStyle: .callout)
+            view?.backgroundColor = #colorLiteral(red: 0, green: 0.3130702555, blue: 0.07843137255, alpha: 1)
+            view?.font =  UIFont.preferredFont(forTextStyle: .callout)
             view?.textAlignment = .center
             view?.sizeToFit()
         }
@@ -100,8 +111,12 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            tableView.beginUpdates()
             barCodes[indexPath.section].codes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.deleteRows(at: [indexPath], with: .top)
+            tableView.endUpdates()
+            tableView.reloadData()
+            archive()
         }
     }
     

@@ -10,6 +10,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="hUN-er-kZd">
+            <objects>
+                <viewController id="2Fp-d1-5Kp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dJk-ob-LzX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ivg-rC-r9z">
+                                <rect key="frame" x="20" y="20" width="335" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gct-dD-ItU">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="323.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lBq-pT-LbL">
+                                        <rect key="frame" x="0.0" y="323.5" width="335" height="323.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Smart Barcodes 1.0
+©2017 mySmartSoftware
+Simple barcode reader.
+Reads the formats supported by iOS.
+Identifies:
+Hyperlinks - tap to go to Safari
+Phone numbers - tap to call
+Addresses - tap to open in Maps
+Tracking numbers - tap to track packages</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I3v-no-rbN" firstAttribute="trailing" secondItem="Ivg-rC-r9z" secondAttribute="trailing" constant="20" id="6nD-lt-DiD"/>
+                            <constraint firstItem="Ivg-rC-r9z" firstAttribute="leading" secondItem="I3v-no-rbN" secondAttribute="leading" constant="20" id="7fw-Fj-x1S"/>
+                            <constraint firstItem="Ivg-rC-r9z" firstAttribute="top" secondItem="I3v-no-rbN" secondAttribute="top" id="R6G-04-JsK"/>
+                            <constraint firstItem="I3v-no-rbN" firstAttribute="bottom" secondItem="Ivg-rC-r9z" secondAttribute="bottom" id="UAi-xn-OJl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I3v-no-rbN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ov-b8-f4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="-251"/>
+        </scene>
         <!--Smart Barcodes-->
         <scene sceneID="3UV-E7-jmG">
             <objects>
@@ -85,6 +132,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
+                        <barButtonItem id="DVv-uX-pUu"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="pnc-yl-ytj"/>
                         <barButtonItem title="Scan" id="5rB-Ct-0RQ">
                             <color key="tintColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,6 +141,12 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="p7q-na-E47"/>
+                        <barButtonItem title="Info" id="iNg-5i-QXa">
+                            <color key="tintColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="2Fp-d1-5Kp" kind="presentation" modalTransitionStyle="partialCurl" id="oAQ-2n-iYx"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Smart Barcodes" id="uux-cK-mgD"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -110,25 +164,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-LN-G2Z" userLabel="previewView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </view>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-kU-niB" customClass="ScannerView" customModule="Smart_Barcodes" customModuleProvider="target">
-                                <rect key="frame" x="16" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="height" secondItem="HK2-kU-niB" secondAttribute="height" id="QnR-fp-L2S"/>
-                            <constraint firstItem="Ud4-R2-N29" firstAttribute="centerX" secondItem="HK2-kU-niB" secondAttribute="centerX" constant="-16" id="YEP-X8-epJ"/>
+                            <constraint firstItem="Ud4-R2-N29" firstAttribute="bottom" secondItem="7NE-LN-G2Z" secondAttribute="bottom" id="XHT-Pt-wLy"/>
+                            <constraint firstItem="Ud4-R2-N29" firstAttribute="centerX" secondItem="HK2-kU-niB" secondAttribute="centerX" id="YEP-X8-epJ"/>
                             <constraint firstItem="7NE-LN-G2Z" firstAttribute="width" secondItem="6gN-YE-G55" secondAttribute="width" id="Yez-oZ-EiQ"/>
-                            <constraint firstItem="7NE-LN-G2Z" firstAttribute="height" secondItem="6gN-YE-G55" secondAttribute="height" id="Z6b-3s-fTc"/>
                             <constraint firstAttribute="width" secondItem="HK2-kU-niB" secondAttribute="width" id="cBd-qs-Ms6"/>
+                            <constraint firstItem="Ud4-R2-N29" firstAttribute="bottom" secondItem="HK2-kU-niB" secondAttribute="bottom" id="eeM-gz-fhf"/>
+                            <constraint firstItem="HK2-kU-niB" firstAttribute="top" secondItem="Ud4-R2-N29" secondAttribute="top" id="fXQ-ok-X9q"/>
                             <constraint firstItem="Ud4-R2-N29" firstAttribute="centerX" secondItem="7NE-LN-G2Z" secondAttribute="centerX" id="n5g-Bu-mZC"/>
-                            <constraint firstAttribute="centerY" secondItem="HK2-kU-niB" secondAttribute="centerY" id="q3k-2c-AzM"/>
-                            <constraint firstAttribute="centerY" secondItem="7NE-LN-G2Z" secondAttribute="centerY" id="tE9-pR-482"/>
+                            <constraint firstItem="7NE-LN-G2Z" firstAttribute="top" secondItem="Ud4-R2-N29" secondAttribute="top" id="w2j-XO-ewH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ud4-R2-N29"/>
                         <connections>
@@ -138,7 +190,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="rsl-rg-Wf7"/>
-                        <barButtonItem systemItem="done" id="XHp-Ds-gNP">
+                        <barButtonItem style="done" systemItem="done" id="XHp-Ds-gNP">
                             <color key="tintColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="doneButton:" destination="NRC-g9-VdU" id="Ivl-Dk-EvC"/>
@@ -165,7 +217,7 @@
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1964" y="1197"/>
+            <point key="canvasLocation" x="1963.7681159420292" y="1196.7391304347827"/>
         </scene>
         <!--Bar Code View Controller-->
         <scene sceneID="Iak-Ex-79X">
