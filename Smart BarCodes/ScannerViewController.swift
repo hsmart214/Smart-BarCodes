@@ -118,7 +118,7 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
                             [unowned self] in
                             self.polys = newPolys
                             //self.doneButton(self)
-                            self.perform(#selector(self.doneButton(_:)), with: self, afterDelay: 5.0)
+                            self.perform(#selector(self.doneButton(_:)), with: self, afterDelay: 2.5)
                         }
                     }
                 }

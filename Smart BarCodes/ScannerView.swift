@@ -17,6 +17,7 @@ class ScannerView: UIView {
             // change all of the points from relative space to absolute points
             let h = self.bounds.size.height
             let w = self.bounds.size.width
+            
             var newPolys : [[CGPoint]] = []
             
             for p in polygons{

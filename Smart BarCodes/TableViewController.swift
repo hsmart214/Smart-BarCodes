@@ -202,10 +202,15 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
         
         if let jsonData =  try? Data(contentsOf: url), let archive = try? decoder.decode([DayOfCodes].self, from: jsonData){
             barCodes = archive
-            //Swift.print("Successfully read archive.")
+            var nonEmptyDays = [DayOfCodes]()
+            for day in barCodes{
+                if day.codes.count != 0{
+                    nonEmptyDays.append(day)
+                }
+            }
+            barCodes = nonEmptyDays
             return true
         }else{
-            //Swift.print("Unsucessful read from archive.")
             return false
         }
     }

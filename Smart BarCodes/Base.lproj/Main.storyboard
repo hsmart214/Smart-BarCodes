@@ -181,23 +181,23 @@ Tracking numbers - tap to track packages</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-LN-G2Z" userLabel="previewView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                             </view>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HK2-kU-niB" customClass="ScannerView" customModule="Smart_Barcodes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.31307025550000001" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Ud4-R2-N29" firstAttribute="top" secondItem="7NE-LN-G2Z" secondAttribute="top" constant="64" id="IGF-MK-eW5"/>
                             <constraint firstItem="Ud4-R2-N29" firstAttribute="bottom" secondItem="7NE-LN-G2Z" secondAttribute="bottom" id="XHT-Pt-wLy"/>
                             <constraint firstItem="Ud4-R2-N29" firstAttribute="centerX" secondItem="HK2-kU-niB" secondAttribute="centerX" id="YEP-X8-epJ"/>
                             <constraint firstItem="7NE-LN-G2Z" firstAttribute="width" secondItem="6gN-YE-G55" secondAttribute="width" id="Yez-oZ-EiQ"/>
                             <constraint firstAttribute="width" secondItem="HK2-kU-niB" secondAttribute="width" id="cBd-qs-Ms6"/>
                             <constraint firstItem="Ud4-R2-N29" firstAttribute="bottom" secondItem="HK2-kU-niB" secondAttribute="bottom" id="eeM-gz-fhf"/>
-                            <constraint firstItem="HK2-kU-niB" firstAttribute="top" secondItem="Ud4-R2-N29" secondAttribute="top" id="fXQ-ok-X9q"/>
+                            <constraint firstItem="HK2-kU-niB" firstAttribute="top" secondItem="Ud4-R2-N29" secondAttribute="top" constant="-64" id="fXQ-ok-X9q"/>
                             <constraint firstItem="Ud4-R2-N29" firstAttribute="centerX" secondItem="7NE-LN-G2Z" secondAttribute="centerX" id="n5g-Bu-mZC"/>
-                            <constraint firstItem="7NE-LN-G2Z" firstAttribute="top" secondItem="Ud4-R2-N29" secondAttribute="top" id="w2j-XO-ewH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ud4-R2-N29"/>
                         <connections>
@@ -234,7 +234,7 @@ Tracking numbers - tap to track packages</string>
                     </connections>
                 </pinchGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1963.7681159420292" y="1196.7391304347827"/>
+            <point key="canvasLocation" x="1962.4000000000001" y="1195.0524737631185"/>
         </scene>
         <!--Bar Code View Controller-->
         <scene sceneID="Iak-Ex-79X">
