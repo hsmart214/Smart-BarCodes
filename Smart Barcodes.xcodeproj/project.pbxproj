@@ -16,6 +16,7 @@
 		42598D9A1B62F3FC00C47B50 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D991B62F3FC00C47B50 /* TableViewController.swift */; };
 		42598D9C1B62F84B00C47B50 /* BarCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */; };
 		42598D9E1B62F85E00C47B50 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42598D9D1B62F85E00C47B50 /* ScannerViewController.swift */; };
+		42D9681D1FB03B63002A2D27 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D9681C1FB03B63002A2D27 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		42598D991B62F3FC00C47B50 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarCodeViewController.swift; sourceTree = "<group>"; };
 		42598D9D1B62F85E00C47B50 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		42D9681C1FB03B63002A2D27 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				42598D9B1B62F84B00C47B50 /* BarCodeViewController.swift */,
 				42598D9D1B62F85E00C47B50 /* ScannerViewController.swift */,
 				42385B831B647F810053F4F6 /* ScannerView.swift */,
+				42D9681C1FB03B63002A2D27 /* InfoViewController.swift */,
 				42598D771B62F2CF00C47B50 /* Supporting Files */,
 			);
 			path = "Smart BarCodes";
@@ -139,6 +142,7 @@
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = TY3543425A;
 						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -183,6 +187,7 @@
 				42598D9E1B62F85E00C47B50 /* ScannerViewController.swift in Sources */,
 				42481F1C1FA572950083AFF8 /* CapturedCodeTableViewCell.swift in Sources */,
 				42481F1A1FA3F5AD0083AFF8 /* CapturedCode.swift in Sources */,
+				42D9681D1FB03B63002A2D27 /* InfoViewController.swift in Sources */,
 				42385B841B647F810053F4F6 /* ScannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,11 +311,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TY3543425A;
 				INFOPLIST_FILE = "Smart BarCodes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mySmartSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -321,11 +329,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TY3543425A;
 				INFOPLIST_FILE = "Smart BarCodes/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mySmartSoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

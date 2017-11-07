@@ -24,7 +24,7 @@ class CapturedCode: Codable{
     convenience init(metadateObject bc : AVMetadataMachineReadableCodeObject) {
         let isoCode = bc.type.rawValue
         var collector = ""
-        for i in isoCode.characters{
+        for i in isoCode{
             if i.description == "."{
                 collector = ""
             }else{

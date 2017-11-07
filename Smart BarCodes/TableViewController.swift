@@ -41,7 +41,7 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
             var sampleToday = DayOfCodes(date: Date(), codes: [])
             let sampleAztec = CapturedCode(type: "Aztec", stringValue: "1Z24823766Q765", andTime: Date())
             sampleToday.codes = [sampleAztec]
-            barCodes = [sampleYesterday, sampleToday]
+            barCodes = [sampleToday, sampleYesterday]
             
         }
 //        observerToken = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillResignActive, object: nil, queue: nil) {
@@ -113,9 +113,17 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
             // Delete the row from the data source
             tableView.beginUpdates()
             barCodes[indexPath.section].codes.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .top)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
+            //tableView.reloadSections([indexPath.section], with: .automatic)
+            
+            if barCodes[indexPath.section].codes.count == 0{
+                //tableView.beginUpdates()
+                barCodes.remove(at: indexPath.section)
+                //tableView.endUpdates()
+            }
             tableView.reloadData()
+            //tableView.endUpdates()
             archive()
         }
     }
@@ -123,29 +131,27 @@ final class TableViewController: UITableViewController, CaptureDelegate, CodeEdi
     // MARK: - CaptureDelegate
     
     func capturedBarCodes(_ newCodes: [AVMetadataMachineReadableCodeObject]) {
-        var section : Int
+        let section = 0
         let today = Date()
         if barCodes.count == 0{
             // this is the first day of codes, add a day and start using it
             barCodes.append(DayOfCodes(date: today, codes: []))
-            section = 0
         }else{
             df.timeStyle = .none
             df.dateStyle = .medium
             let todaysDate = df.string(from: today)
-            if df.string(from:barCodes.last!.date) == todaysDate{
+            if df.string(from:barCodes.first!.date) == todaysDate{
                 // this means we are appending codes to an existing day of codes
-                section = barCodes.count - 1
             }else{
                 // we need to add a new day to the end of the list of days
-                section = barCodes.count
-                barCodes.append(DayOfCodes(date: today, codes: []))
+                let newDay = DayOfCodes(date: today, codes: [])
+                barCodes.insert(newDay, at: 0)
             }
         }
         DispatchQueue.main.async {[weak self] in
             //            self.tableView.beginUpdates()
             for code in newCodes{
-                self?.barCodes[section].codes.append(CapturedCode(metadateObject: code))
+                self?.barCodes[section].codes.insert(CapturedCode(metadateObject: code), at: 0)
             }
             //            self.tableView.endUpdates()
             self?.tableView.reloadData()
